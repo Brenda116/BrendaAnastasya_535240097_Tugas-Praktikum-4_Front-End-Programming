@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #2d3436;
+  background: #f9fafc;
+  line-height: 1.6;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #2c2c2c;
+  color: #f5f5f5;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background: #3a3a3a;
+}
+
+body.dark-mode a {
+  color: #f5f5f5;
+}
+
+body.dark-mode .hero,
+body.dark-mode .about-us,
+body.dark-mode .skills,
+body.dark-mode .portfolio,
+body.dark-mode .contact {
+  background: #3a3a3a;
+  color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+body.dark-mode .about-us h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .about-us p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .portfolio h2 {
+  color: #ffffff;
+}
+
+body.mode-mode .feature {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .skills .skill-card {
+  background: #2c2c2c;
+  color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .skills .skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+body.dark-mode .portfolio .portfolio-item {
+  background: #2c2c2c;
+  color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .portfolio .portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+#darkModeBtn {
+  margin-left: 20px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0984e3, #6c5ce7);
+  color: #fff;
+}
+
+/* Navigation Bar */
+header {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0984e3;
+}
+
+header .logo span {
+  color: #6c5ce7;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2d3436;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0984e3;
+}
+
+/* Hero */
+.hero {
+  height: 75vh;
+  background: url("https://plus.unsplash.com/premium_photo-1701795331097-4ddcbccaf325?q=80&w=1032&auto=format&fit=crop") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #0984e3, #6c5ce7);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #6c5ce7, #0984e3);
+}
+
+/* About Me Section */
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 80px 10%;
+  background-color: #f9f9f9;
+}
+
+.about-card {
+  flex: 1;
+}
+
+.about-card img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Skills Section */
+.skills {
+background: 
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url("https://plus.unsplash.com/premium_photo-1701795331097-4ddcbccaf325?q=80&w=1032&auto=format&fit=crop") 
+  no-repeat center center/cover;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 60px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+}
+
+.skills p.skills-intro,
+.skills p.skills-outro {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  line-height: 1.7;
+}
+
+.features {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature i {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #0984e3;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2d3436;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Responsif */
+/* kalau layar lebih kecil dari 992px, maka portfolio-container berubah jadi 2 kolom. */
+@media (max-width: 992px) {
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* kalau layar lebih kecil dari 600px, maka portfolio-container berubah jadi 1 kolom. */
+@media (max-width: 600px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.portfolio-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-card h4 {
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.portfolio-card p {
+  font-size: 0.95rem;
+  color: #636e72;
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 10%;
+  text-align: left;
+  background: 
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url("https://plus.unsplash.com/premium_photo-1701795331097-4ddcbccaf325?q=80&w=1032&auto=format&fit=crop") 
+  no-repeat center center/cover;  
+  color: #fff;
+  border-radius: 12px;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.contact-info {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contact form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact form button {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #0984e3;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact form button:hover {
+  background: #6c5ce7;
+}
+
+.social-icons {
+  margin-top: 25px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0984e3;
+}
+
+/* Footer */
+footer {
+background: 
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url("https://plus.unsplash.com/premium_photo-1701795331097-4ddcbccaf325?q=80&w=1032&auto=format&fit=crop") 
+  no-repeat center center/cover;
+  color : #fff;
+  text-align: center;
+  padding: 20px 40px;
+  margin: 40px auto 0;
+  width: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .about-us, .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-card img, .contact form {
+    max-width: 100%;
+  }
+}
+
+/* Animation and Transition section */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us, 
+.skills, 
+.portfolio, 
+.contact, 
+footer {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.about-us { 
+  animation-delay: 0.2s; 
+}
+.skills { 
+  animation-delay: 0.4s; 
+}
+.portfolio { 
+  animation-delay: 0.6s; 
+}
+.contact { 
+  animation-delay: 0.8s; 
+}
+footer { 
+  animation-delay: 1s; 
+}
+
+.feature, 
+.portfolio-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover, 
+.portfolio-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.btn {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.feature i, .social-icons a {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.feature i { 
+  animation-delay: 0.3s; 
+}
+.social-icons a:nth-child(1) { 
+  animation-delay: 0.5s; 
+}
+.social-icons a:nth-child(2) { 
+  animation-delay: 0.6s; 
+}
+.social-icons a:nth-child(3) { 
+  animation-delay: 0.7s; 
+}
+.social-icons a:nth-child(4) { 
+  animation-delay: 0.8s; 
+}
